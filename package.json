@@ -1,0 +1,41 @@
+{
+  "name": "ttag-webpack-multi-config",
+  "version": "1.0.0",
+  "description": "testing ttga with webpack multi config",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "extract": "webpack --env.extract",
+    "build:default": "webpack --env.locale=default",
+    "build:fr": "webpack --env.locale=fr",
+    "build:es": "webpack --env.locale=es",
+    "build:all": "npm run build:default && npm run build:fr && npm run build:es",
+    "build:multi": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiousi/ttag-webpack-multi-config.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "hiousi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hiousi/ttag-webpack-multi-config/issues"
+  },
+  "homepage": "https://github.com/hiousi/ttag-webpack-multi-config#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-ttag": "^1.7.8",
+    "json-loader": "^0.5.7",
+    "po-gettext-loader": "^0.1.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "ttag": "^1.7.8"
+  }
+}
