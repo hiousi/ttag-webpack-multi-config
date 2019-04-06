@@ -4,7 +4,7 @@ const ttag = {};
 const config = (locale = 'default') => {
     return {
         name: `build-${locale}`,
-        mode: 'production',
+        mode: 'development',
         entry: './app.js',
         output: {
             filename: `app.${locale}.js`
