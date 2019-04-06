@@ -2,6 +2,9 @@ const webpack = require('webpack');
 const ttag = {};
 
 const config = (locale = 'default') => {
+    
+    ttag.resolve = { translations: locale !== 'default' ? `${locale}.po` : 'default' };
+
     return {
         name: `build-${locale}`,
         mode: 'development',
@@ -41,15 +44,14 @@ module.exports = (env = {}) => {
         return config();
     }
 
-    if (env.locale) {
-        ttag.resolve = { translations: env.locale !== 'default' ? `${env.locale}.po` : 'default' };
+    if (env.locale) 
         return config(env.locale);
-    }
+    
 
    // exports multiple configurations 
    return [
        config('fr'), 
+       config('default'),
        config('es'), 
-       config('default')
    ]
 }
